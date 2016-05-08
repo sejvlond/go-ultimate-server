@@ -1,0 +1,43 @@
+{{ define "@layout"}}
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ template "description" . }}">
+        <meta name="author" content="Ondřej Šejvl">
+
+        <title>{{ template "title" . }}</title>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        {{ template "head" . }}
+    </head>
+
+    <body>
+        {{ template "content" . }}
+
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip({html:true});
+                $('[data-toggle="popover"]').popover({
+                    html:true,
+                    trigger: "hover",
+                    delay: { "show": 500, "hide": 100 },
+                });
+            });
+        </script>
+        {{ template "scripts" . }}
+    </body>
+</html>
+{{ end }}
+
+{{ define "description" }}{{ end }}
+{{ define "head" }}{{ end }}
+{{ define "scripts" }}{{ end }}

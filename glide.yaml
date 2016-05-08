@@ -1,0 +1,5 @@
+package: github.com/sejvlond/go-ultimate-server
+import:
+- package: github.com/Sirupsen/logrus
+- package: github.com/docopt/docopt-go
+- package: gopkg.in/yaml.v2

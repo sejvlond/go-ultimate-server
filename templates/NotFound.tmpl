@@ -1,0 +1,41 @@
+{{ define "title"}}NotFound{{ end }}
+
+{{ define "head" }}
+    <style>
+        .actions {
+            width: 210px;
+        }
+        span.required {
+            color: red;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .traceback {
+            background: #000;
+            color: #4CC417;
+            padding: 5px;
+        }
+    </style>
+{{ end }}
+
+{{ define "content" }}
+    <div class="col-md-offset-4 col-md-4 col-sm-offset-2 col-sm-8">    
+        <br>
+        <div class="jumbotron alert alert-danger">
+            <h1>ERROR <span class="label label-danger">{{ .Code }}</span></h1>
+            <h2><span class="label label-default">{{ .Message }}</span></h2>
+            <br>
+            <div class="progress">
+                <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 95%">
+                    <span class="sr-only">...</span>
+                </div>
+            </div>
+            <p>
+                Málem se to povedlo, ale bohužel na adrese
+                <br><code>{{ .URI }}</code><br>
+                nastala nemilá chyba. Zkuste vyhledat odbornou pomoc.
+            </p>
+        </div>
+    </div>
+{{ end }}
